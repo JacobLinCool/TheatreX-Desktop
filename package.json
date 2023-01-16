@@ -1,0 +1,43 @@
+{
+	"private": true,
+	"name": "theatrex-desktop",
+	"productName": "TheatreX",
+	"description": "TheatreX is a place to combine all your favorite streaming services into a single, unified experience.",
+	"version": "1.0.0-dev.8",
+	"author": {
+		"name": "JacobLinCool",
+		"email": "jacoblincool@gmail.com",
+		"url": "https://jacoblin.cool"
+	},
+	"main": "src/index.js",
+	"scripts": {
+		"prepare": "husky install",
+		"start": "electron-forge start",
+		"package": "electron-forge package",
+		"make": "electron-forge make",
+		"publish": "electron-forge publish",
+		"format": "prettier --write --ignore-path .gitignore .",
+		"make:icons": "node ./node_modules/electron-icon-maker/index.js --input assets/theatrex-2048.png"
+	},
+	"dependencies": {
+		"electron-squirrel-startup": "^1.0.0",
+		"theatrex": "1.0.0-dev.8"
+	},
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.4",
+		"@electron-forge/maker-deb": "^6.0.4",
+		"@electron-forge/maker-dmg": "^6.0.4",
+		"@electron-forge/maker-squirrel": "^6.0.4",
+		"@electron-forge/maker-zip": "^6.0.4",
+		"electron": "22.0.2",
+		"electron-icon-maker": "^0.0.5",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"prettier": "^2.8.3"
+	},
+	"lint-staged": {
+		"*.{ts,js,json,yaml,yml,svelte,html,css}": [
+			"prettier --write"
+		]
+	}
+}
