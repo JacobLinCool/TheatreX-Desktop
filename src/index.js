@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Notification } = require("electron");
 const path = require("node:path");
 const { spawn } = require("node:child_process");
 
@@ -51,6 +51,22 @@ const open = async () => {
 
 	await done;
 	await window.loadURL("http://localhost:3000");
+
+	window.webContents.session.on("will-download", (evt, item) => {
+		const name = item.getFilename();
+		if (path.extname(name) === ".png") {
+			item.setSavePath(path.join(app.getPath("downloads"), name));
+
+			item.on("done", (evt, state) => {
+				if (state === "completed") {
+					new Notification({
+						title: "Captured!",
+						body: item.getFilename(),
+					}).show();
+				}
+			});
+		}
+	});
 };
 
 app.on("ready", open)

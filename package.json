@@ -3,7 +3,7 @@
 	"name": "theatrex-desktop",
 	"productName": "TheatreX",
 	"description": "TheatreX is a place to combine all your favorite streaming services into a single, unified experience.",
-	"version": "1.0.0-dev.10",
+	"version": "1.0.0-dev.12",
 	"author": {
 		"name": "JacobLinCool",
 		"email": "jacoblincool@gmail.com",
@@ -16,12 +16,11 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"format": "prettier --write --ignore-path .gitignore .",
-		"make:icons": "node ./node_modules/electron-icon-maker/index.js --input assets/theatrex-2048.png"
+		"format": "prettier --write --ignore-path .gitignore ."
 	},
 	"dependencies": {
 		"electron-squirrel-startup": "^1.0.0",
-		"theatrex": "1.0.0-dev.10"
+		"theatrex": "1.0.0-dev.12"
 	},
 	"devDependencies": {
 		"@electron-forge/cli": "^6.0.4",
@@ -30,7 +29,6 @@
 		"@electron-forge/maker-squirrel": "^6.0.4",
 		"@electron-forge/maker-zip": "^6.0.4",
 		"electron": "22.0.2",
-		"electron-icon-maker": "^0.0.5",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.0",
 		"prettier": "^2.8.3"
