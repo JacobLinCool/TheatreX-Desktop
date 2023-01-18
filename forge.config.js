@@ -21,6 +21,15 @@ module.exports = {
 			name: "@electron-forge/maker-dmg",
 			config: {
 				icon: "./src/icons/icon.icns",
+				background: "./assets/dmg-background.png",
+				additionalDMGOptions: {
+					window: {
+						size: {
+							width: 600,
+							height: 500,
+						},
+					},
+				},
 			},
 		},
 		{
