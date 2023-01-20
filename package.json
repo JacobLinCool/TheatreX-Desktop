@@ -3,7 +3,7 @@
 	"name": "theatrex-desktop",
 	"productName": "TheatreX",
 	"description": "TheatreX is a place to combine all your favorite streaming services into a single, unified experience.",
-	"version": "1.0.0-dev.13",
+	"version": "1.0.0-dev.16",
 	"author": {
 		"name": "JacobLinCool",
 		"email": "jacoblincool@gmail.com",
@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"electron-squirrel-startup": "^1.0.0",
-		"theatrex": "1.0.0-dev.15"
+		"theatrex": "1.0.0-dev.16"
 	},
 	"devDependencies": {
 		"@electron-forge/cli": "^6.0.4",
