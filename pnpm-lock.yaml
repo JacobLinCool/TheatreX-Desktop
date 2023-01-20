@@ -11,11 +11,11 @@ specifiers:
     husky: ^8.0.3
     lint-staged: ^13.1.0
     prettier: ^2.8.3
-    theatrex: 1.0.0-dev.16
+    theatrex: 1.0.0-dev.17
 
 dependencies:
     electron-squirrel-startup: 1.0.0
-    theatrex: 1.0.0-dev.16
+    theatrex: 1.0.0-dev.17
 
 devDependencies:
     "@electron-forge/cli": 6.0.4
@@ -4333,10 +4333,10 @@ packages:
         dev: true
         optional: true
 
-    /theatrex/1.0.0-dev.16:
+    /theatrex/1.0.0-dev.17:
         resolution:
             {
-                integrity: sha512-ppO2NnwU8splH3L6GZnBc5ibWW2xUKOiYUZ4DnmYBfgVXOEjfTf8Q+ATTVjoC2bYenyQmNsWaEbpkxq6ebXEVw==,
+                integrity: sha512-/384sqOqkzOfL3kCNF2zuPZEpos/hVQ2ioNGMzrrWUkbyr13ecNaS01qO6jMlDqUT05NvOXh10wIb6fVuxdA5w==,
             }
         hasBin: true
         dev: false
