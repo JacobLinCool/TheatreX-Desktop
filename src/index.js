@@ -7,7 +7,7 @@ if (require("electron-squirrel-startup")) {
 }
 
 const location = require.resolve("theatrex/dist/index.mjs");
-console.log({ location });
+console.log({ location, env: process.env });
 
 const server = spawn(app.getPath("exe"), [location], {
 	stdio: "pipe",
@@ -16,6 +16,10 @@ const server = spawn(app.getPath("exe"), [location], {
 		ELECTRON_RUN_AS_NODE: 1,
 	},
 	shell: true,
+});
+
+server.on("error", (err) => {
+	new Notification({ title: "Error", body: err.message }).show();
 });
 
 server.once("exit", (code) => {
