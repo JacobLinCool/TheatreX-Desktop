@@ -26,6 +26,12 @@ server.on("error", (err) => {
 
 server.once("exit", (code) => {
 	console.log("Server exited with code", code);
+	if (code !== 0) {
+		new Notification({
+			title: "Unexpected Exit!",
+			body: `Server exited with code ${code}`,
+		}).show();
+	}
 	app.quit();
 });
 
@@ -76,18 +82,18 @@ const open = async () => {
 };
 
 app.on("ready", open)
-	.on("window-all-closed", () => {
-		if (process.platform !== "darwin") {
-			app.quit();
-		}
-	})
 	.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) {
 			open();
 		}
 	})
+	.on("window-all-closed", () => {
+		if (process.platform !== "darwin") {
+			app.quit();
+		}
+	})
 	.on("before-quit", (evt) => {
-		if (!server.killed) {
+		if (server.exitCode === null) {
 			server.kill("SIGINT");
 			evt.preventDefault();
 		}
