@@ -6,6 +6,8 @@ if (require("electron-squirrel-startup")) {
 	app.quit();
 }
 
+require("fix-path")();
+
 const location = require.resolve("theatrex/dist/index.mjs");
 console.log({ location, env: process.env });
 
